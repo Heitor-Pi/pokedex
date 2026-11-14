@@ -13,3 +13,9 @@ const searchPokemon = (pokemon) => {
             pokemon_image.src = data.sprites.versions["genearation-v"]["black-white"].animated.front_default;
     })
 }
+
+    
+
+    btn_search.addEventListener("click", () => {
+        searchPokemon("67")
+    })
