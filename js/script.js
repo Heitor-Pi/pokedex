@@ -10,12 +10,13 @@ const searchPokemon = (pokemon) => {
             console.log(data.sprites.versions["generation-v"]["black-white"].animated.front_default);
             pokemon_name.innerText = data.name
             pokemon_number.innerText = data.id
-            pokemon_image.src = data.sprites.versions["genearation-v"]["black-white"].animated.front_default;
+            pokemon_image.src = data.sprites.versions["generation-v"]["black-white"].animated.front_default;
     })
 }
 
     
 
-    btn_search.addEventListener("click", () => {
-        searchPokemon("67")
+    btn_search.addEventListener("click", (event) => {
+        event.preventDefault()
+        searchPokemon(input_search.value)
     })
