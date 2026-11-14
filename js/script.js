@@ -23,3 +23,7 @@ btn_search.addEventListener("click", (e) => {
     e.preventDefault()
     searchpokemon(input_search.value)
 })
+btn_next.addEventListener("click",() =>{
+        pokemonID++
+        searchpokemon(pokemonID)
+})
