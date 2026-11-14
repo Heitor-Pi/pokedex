@@ -7,21 +7,19 @@ const btn_prev = document.getElementById("btn-prev")
 const btn_next = document.getElementById("btn-next")
 let pokemonID 
 
-const searchPokemon = (pokemon) => {
-    fetch (`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data.sprites.versions["generation-v"]["black-white"].animated.front_default);
-            pokemon_name.innerText = data.name
-            pokemon_number.innerText = data.id
-            pokemon_image.src = data.sprites.versions["generation-v"]["black-white"].animated.front_default;
-            pokemonID = data.id
+const searchpokemon = (pokemon) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data.sprites.versions["generation-v"]["black-white"].animated.front_default);
+        pokemon_image.src = data.sprites.versions["generation-v"]["black-white"].animated.front_default
+        pokemon_name.innerText = data.name
+        pokemon_number.innerText = data.id
+        pokemonID = data.id
     })
 }
 
-    
-
-    btn_search.addEventListener("click", (event) => {
-        event.preventDefault()
-        searchPokemon(input_search.value)
-    })
+btn_search.addEventListener("click", (e) => {
+    e.preventDefault()
+    searchpokemon(input_search.value)
+})
