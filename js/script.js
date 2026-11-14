@@ -27,3 +27,8 @@ btn_next.addEventListener("click",() =>{
         pokemonID++
         searchpokemon(pokemonID)
 })
+btn_prev.addEventListener("click",() =>{
+        pokemonID--
+        searchpokemon(pokemonID)
+})
+
